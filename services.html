@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tucker Pharmacy in Fairview, TN offers prescription refills, medication counseling, immunizations, prescription transfers, and more. Personalized care from a local team." />
+  <title>Services — Tucker Pharmacy</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       SITE HEADER
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo" aria-label="Tucker Pharmacy — Home">
+        <div class="logo-mark" aria-hidden="true">Rx</div>
+        <div class="logo-text">
+          <span class="logo-name">Tucker Pharmacy</span>
+          <span class="logo-tagline">Fairview, Tennessee</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="mobile-app.html">Mobile App</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-mobile-actions">
+          <a href="https://portal.digitalpharmacist.com/?pharmacy_id=bd510064-9d01-4053-98d8-5c1fb09d3efc" class="btn btn-accent btn-lg">Refill a Prescription</a>
+          <!-- TODO: Replace # with your new patient registration URL -->
+          <a href="contact.html" class="btn btn-outline btn-lg">New Patient Sign-Up</a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://portal.digitalpharmacist.com/?pharmacy_id=bd510064-9d01-4053-98d8-5c1fb09d3efc" class="btn btn-accent">Refill Rx</a>
+        <!-- TODO: Replace # with your new patient registration URL -->
+        <a href="contact.html" class="btn btn-outline">New Patient</a>
+      </div>
+
+      <button
+        class="mobile-menu-toggle"
+        id="mobile-menu-toggle"
+        aria-controls="main-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+  <!-- END SITE HEADER -->
+
+
+  <main>
+
+    <!-- ────────────────────────────────────────────────────────
+         PAGE HERO
+         ──────────────────────────────────────────────────────── -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container page-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">›</span>
+          <span aria-current="page">Services</span>
+        </nav>
+        <h1 id="page-title">Our Services</h1>
+        <p>Full-service pharmacy care designed around you — from the routine to the complex.</p>
+      </div>
+    </section>
+    <!-- END PAGE HERO -->
+
+
+    <!-- ────────────────────────────────────────────────────────
+         SERVICES INTRO
+         ──────────────────────────────────────────────────────── -->
+    <section class="section section--white" aria-labelledby="services-intro-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">What We Offer</span>
+          <h2 id="services-intro-heading">Everything You Need,<br>Under One Roof</h2>
+          <p class="content-lead">
+            Tucker Pharmacy offers a full range of pharmacy services — all delivered with the
+            personal attention that only a locally owned, independent pharmacy can provide.
+            If you have a need we haven't listed here, just ask. We are always glad to help.
+          </p>
+        </div>
+
+        <div class="service-list">
+
+          <!-- Prescription Refills -->
+          <article class="service-item" aria-labelledby="svc-refills">
+            <div class="service-item-icon" aria-hidden="true"><i class="fa-solid fa-capsules"></i></div>
+            <div class="service-item-body">
+              <h3 id="svc-refills">Prescription Refills</h3>
+              <p>
+                Getting your prescription refilled should be simple and stress-free. You can
+                request a refill by phone, through our mobile app, or simply by stopping in.
+                We'll have it ready when you need it. For maintenance medications, we can help
+                set up automatic refill reminders so you never run out unexpectedly.
+              </p>
+              <div class="btn-group">
+                <a href="https://portal.digitalpharmacist.com/?pharmacy_id=bd510064-9d01-4053-98d8-5c1fb09d3efc" class="btn btn-accent btn-sm">Refill Now</a>
+                <a href="mobile-app.html" class="btn btn-outline btn-sm">Use the App</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- New Patient Services -->
+          <article class="service-item" aria-labelledby="svc-new-patients">
+            <div class="service-item-icon service-item-icon--accent" aria-hidden="true"><i class="fa-solid fa-clipboard-list"></i></div>
+            <div class="service-item-body">
+              <h3 id="svc-new-patients">New Patient Services</h3>
+              <p>
+                Switching to Tucker Pharmacy is easy. Our team will handle the coordination
+                with your doctor's office and your previous pharmacy so the transition is
+                smooth and uninterrupted. We'll review your complete medication list, answer
+                your questions, and make sure you feel comfortable with your new pharmacy home
+                from day one.
+              </p>
+              <div class="btn-group">
+                <!-- TODO: Replace # with your new patient registration URL -->
+                <a href="contact.html" class="btn btn-accent btn-sm">New Patient Sign-Up</a>
+                <a href="contact.html" class="btn btn-outline btn-sm">Contact Us</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Medication Counseling -->
+          <article class="service-item" aria-labelledby="svc-counseling">
+            <div class="service-item-icon service-item-icon--green" aria-hidden="true"><i class="fa-solid fa-comments"></i></div>
+            <div class="service-item-body">
+              <h3 id="svc-counseling">Medication Counseling</h3>
+              <p>
+                Starting a new medication? Have questions about side effects, dosing, or how
+                your prescriptions interact with each other? Our pharmacists are always
+                available to talk. We believe an informed patient is a healthier patient, and
+                we take time to make sure you fully understand every medication you're taking —
+                what it does, how to take it, and what to watch for.
+              </p>
+              <a href="contact.html" class="btn btn-outline btn-sm">Speak with a Pharmacist</a>
+            </div>
+          </article>
+
+          <!-- Immunizations -->
+          <article class="service-item" aria-labelledby="svc-immunizations">
+            <div class="service-item-icon" aria-hidden="true"><i class="fa-solid fa-syringe"></i></div>
+            <div class="service-item-body">
+              <h3 id="svc-immunizations">Immunizations &amp; Vaccinations</h3>
+              <p>
+                Staying up to date on vaccinations is one of the most important things you
+                can do for your health and the health of those around you. Tucker Pharmacy
+                administers a range of vaccines including flu shots, pneumonia vaccines,
+                shingles vaccines, and more. No appointment necessary for most vaccinations —
+                just stop in during regular hours. Please call ahead to confirm availability
+                and current vaccine offerings.
+              </p>
+              <a href="contact.html" class="btn btn-outline btn-sm">Check Vaccine Availability</a>
+            </div>
+          </article>
+
+          <!-- Prescription Transfers -->
+          <article class="service-item" aria-labelledby="svc-transfers">
+            <div class="service-item-icon service-item-icon--accent" aria-hidden="true"><i class="fa-solid fa-arrows-rotate"></i></div>
+            <div class="service-item-body">
+              <h3 id="svc-transfers">Prescription Transfers</h3>
+              <p>
+                Transferring your prescriptions from another pharmacy is quick, easy, and
+                free. Simply bring in your current prescription bottles or contact information
+                for your previous pharmacy, and we'll take care of the rest. In most cases,
+                your prescriptions can be transferred and ready for pickup the same day.
+                We accept transfers from all major pharmacy chains and independent pharmacies.
+              </p>
+              <a href="contact.html" class="btn btn-outline btn-sm">Start a Transfer</a>
+            </div>
+          </article>
+
+          <!-- Over-the-Counter Guidance -->
+          <article class="service-item" aria-labelledby="svc-otc">
+            <div class="service-item-icon service-item-icon--green" aria-hidden="true"><i class="fa-solid fa-pump-medical"></i></div>
+            <div class="service-item-body">
+              <h3 id="svc-otc">Over-the-Counter Guidance</h3>
+              <p>
+                The pharmacy aisle can be overwhelming. Our team is here to help you cut
+                through the options and find what actually works for your situation. Whether
+                you're managing a cold, looking for a pain reliever that won't interact with
+                your medications, or need guidance on vitamins and supplements, we're happy
+                to offer personalized, practical recommendations. No question is too small.
+              </p>
+              <a href="contact.html" class="btn btn-outline btn-sm">Ask Us Anything</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+    <!-- END SERVICES INTRO -->
+
+
+    <!-- ────────────────────────────────────────────────────────
+         QUICK HIGHLIGHTS
+         ──────────────────────────────────────────────────────── -->
+    <section class="section section--alt" aria-labelledby="highlights-heading">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-label">Why Tucker Pharmacy</span>
+          <h2 id="highlights-heading">The Difference Is in the Details</h2>
+          <p>What sets us apart isn't just what we offer — it's how we offer it.</p>
+        </div>
+
+        <div class="grid-3">
+
+          <div class="feature-card">
+            <div class="feature-card-icon" aria-hidden="true"><i class="fa-solid fa-hand"></i></div>
+            <h3>Real People Answer</h3>
+            <p>
+              When you call Tucker Pharmacy, a member of our team picks up. No phone trees,
+              no long holds, no automated menus. Just a friendly voice, ready to help.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card-icon" aria-hidden="true"><i class="fa-solid fa-clock"></i></div>
+            <h3>Quick Turnaround</h3>
+            <p>
+              Most prescriptions are filled quickly. We communicate clearly so you always
+              know when your prescription will be ready and can plan your day accordingly.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card-icon" aria-hidden="true"><i class="fa-solid fa-dollar-sign"></i></div>
+            <h3>Insurance &amp; Pricing Help</h3>
+            <p>
+              We work with most major insurance plans and can help you understand your
+              coverage, copays, and alternatives if cost is a concern.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- END QUICK HIGHLIGHTS -->
+
+
+    <!-- ────────────────────────────────────────────────────────
+         CTA STRIP
+         ──────────────────────────────────────────────────────── -->
+    <section class="cta-strip" aria-labelledby="services-cta-heading">
+      <div class="container">
+        <span class="section-label section-label--light">Have Questions?</span>
+        <h2 id="services-cta-heading">We're Ready to Help</h2>
+        <p>
+          Not sure which service you need or how to get started? Give us a call or
+          send a message — we'll point you in the right direction.
+        </p>
+        <div class="btn-group">
+          <a href="contact.html" class="btn btn-accent btn-lg">Contact Us</a>
+          <!-- TODO: Replace # with your new patient registration URL -->
+          <a href="contact.html" class="btn btn-outline btn-lg">New Patient Sign-Up</a>
+        </div>
+      </div>
+    </section>
+    <!-- END CTA STRIP -->
+
+  </main>
+
+
+  <!-- ============================================================
+       SITE FOOTER
+       ============================================================ -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col">
+          <a href="index.html" class="footer-logo" aria-label="Tucker Pharmacy — Home">
+            <div class="footer-logo-mark" aria-hidden="true">Rx</div>
+            <span class="footer-logo-name">Tucker Pharmacy</span>
+          </a>
+          <p class="footer-tagline">
+            Your trusted, locally owned pharmacy serving Fairview, Tennessee
+            and the surrounding community.
+          </p>
+          <address class="footer-address">
+            2415 Fairview Blvd<br>
+            Fairview, TN 37062
+          </address>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="mobile-app.html">Mobile App</a>
+            <a href="resources.html">Resources</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <div class="footer-hours">
+            <div class="footer-hours-row">
+              <span>Mon – Fri</span>
+              <span>8:30a – 6:00p</span>
+            </div>
+            <div class="footer-hours-row">
+              <span>Saturday</span>
+              <span>8:30a – 4:00p</span>
+            </div>
+            <div class="footer-hours-row">
+              <span>Sunday</span>
+              <span class="closed">Closed</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-links">
+            <a href="tel:6157990691" class="footer-contact-link">
+              <span aria-hidden="true"><i class="fa-solid fa-phone"></i></span> 615-799-0691
+            </a>
+            <a href="tel:6157990692" class="footer-contact-link">
+              <span aria-hidden="true"><i class="fa-solid fa-fax"></i></span> 615-799-0692 (Fax)
+            </a>
+            <a href="mailto:office@tuckerpharmacy.com" class="footer-contact-link">
+              <span aria-hidden="true"><i class="fa-solid fa-envelope"></i></span> office@tuckerpharmacy.com
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2025 Tucker Pharmacy. All rights reserved.</span>
+        <span>2415 Fairview Blvd, Fairview, TN 37062</span>
+      </div>
+    </div>
+  </footer>
+  <!-- END SITE FOOTER -->
+
+
+  <script src="script.js"></script>
+</body>
+</html>
