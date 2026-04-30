@@ -449,24 +449,16 @@ strong {
 }
 
 .logo-mark {
-  width: 42px;
-  height: 42px;
-  background-color: var(--clr-primary);
-  border-radius: var(--r);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--clr-white);
-  font-family: var(--font-serif);
-  font-size: 1.05rem;
-  font-style: italic;
+  width: auto;
+  height: 52px;
+  object-fit: contain;
+  display: block;
   flex-shrink: 0;
-  letter-spacing: -0.02em;
-  transition: background-color var(--tr);
+  transition: opacity var(--tr);
 }
 
 .logo:hover .logo-mark {
-  background-color: var(--clr-primary-dark);
+  opacity: 0.85;
 }
 
 .logo-text {
@@ -1863,17 +1855,10 @@ strong {
 }
 
 .footer-logo-mark {
-  width: 38px;
-  height: 38px;
-  background-color: rgba(255, 255, 255, 0.10);
-  border-radius: var(--r-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--clr-white);
-  font-family: var(--font-serif);
-  font-size: 1rem;
-  font-style: italic;
+  width: auto;
+  height: 44px;
+  object-fit: contain;
+  display: block;
   flex-shrink: 0;
 }
 
