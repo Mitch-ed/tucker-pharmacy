@@ -1999,6 +1999,40 @@ strong {
 }
 
 
+/* ─── 26b. Staff Photo Feature ──────────────────────────────── */
+
+.staff-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-12);
+  align-items: center;
+}
+
+.staff-photo {
+  margin: 0;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--sh-md);
+  background-color: var(--clr-bg-alt);
+}
+
+.staff-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.staff-photo--portrait {
+  max-width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.staff-feature-text h2 {
+  margin-bottom: var(--sp-5);
+}
+
+
 /* ─── 27. Responsive — Tablet (max-width: 960px) ────────────── */
 
 @media (max-width: 960px) {
@@ -2073,8 +2107,14 @@ strong {
   .hours-grid,
   .story-grid,
   .app-intro-grid,
-  .contact-page-grid {
+  .contact-page-grid,
+  .staff-feature-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* On mobile, always show the photo first regardless of source order */
+  .staff-feature-grid .staff-photo {
+    order: -1;
   }
 
   .grid-2 {
