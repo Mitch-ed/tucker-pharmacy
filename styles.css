@@ -2033,6 +2033,71 @@ strong {
 }
 
 
+/* ─── 26c. Pharmacist Cards ─────────────────────────────────── */
+
+.pharmacist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-8);
+  margin-top: var(--sp-10);
+}
+
+.pharmacist-card {
+  background-color: var(--clr-white);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--clr-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--tr-slow), box-shadow var(--tr-slow);
+}
+
+.pharmacist-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sh);
+}
+
+.pharmacist-photo {
+  margin: 0;
+  background-color: var(--clr-bg-alt);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.pharmacist-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pharmacist-body {
+  padding: var(--sp-6);
+}
+
+.pharmacist-body h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--sp-2);
+}
+
+.pharmacist-credentials {
+  color: var(--clr-text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: var(--sp-4);
+}
+
+.pharmacist-body p {
+  font-size: 0.95rem;
+  margin-bottom: var(--sp-3);
+  max-width: none;
+}
+
+.pharmacist-body p:last-child {
+  margin-bottom: 0;
+}
+
+
 /* ─── 27. Responsive — Tablet (max-width: 960px) ────────────── */
 
 @media (max-width: 960px) {
@@ -2115,6 +2180,15 @@ strong {
   /* On mobile, always show the photo first regardless of source order */
   .staff-feature-grid .staff-photo {
     order: -1;
+  }
+
+  .pharmacist-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+
+  .pharmacist-photo {
+    aspect-ratio: 16 / 10;
   }
 
   .grid-2 {
