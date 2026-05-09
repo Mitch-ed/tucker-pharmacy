@@ -2069,6 +2069,7 @@ strong {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
 }
 
 .pharmacist-body {
@@ -2185,10 +2186,9 @@ strong {
   .pharmacist-grid {
     grid-template-columns: 1fr;
     gap: var(--sp-6);
-  }
-
-  .pharmacist-photo {
-    aspect-ratio: 16 / 10;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .grid-2 {
