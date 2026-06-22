@@ -174,19 +174,19 @@
               as possible. For urgent matters, please call us directly at 615-799-0691.
             </p>
 
-            <!-- Contact form. Submits via Web3Forms (https://web3forms.com). Replace the access_key value with this site's real key. -->
+            <!-- Contact form. Submits via FormSubmit (https://formsubmit.co). -->
             <form
               id="contact-form"
-              action="https://api.web3forms.com/submit"
+              action="https://formsubmit.co/office@tuckerpharmacy.com"
               method="POST"
               aria-label="Contact form"
               novalidate
             >
-              <input type="hidden" name="access_key" value="6c05db60-a43b-4522-956c-c636ccb642f1" />
-              <input type="hidden" name="subject" value="New message from the Tucker Pharmacy website" />
-              <input type="hidden" name="from_name" value="Tucker Pharmacy Website" />
+              <input type="hidden" name="_subject" value="New message from the Tucker Pharmacy website" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
               <!-- Honeypot: leave empty. Bot submissions that fill this are rejected. -->
-              <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" aria-hidden="true" />
+              <input type="text" name="_honey" style="display:none;" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
               <div class="form-row">
                 <div class="form-group">

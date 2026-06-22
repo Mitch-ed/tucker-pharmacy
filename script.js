@@ -158,7 +158,7 @@
       status.className = 'form-status';
     }
 
-    fetch(form.action, {
+    fetch(form.action.replace('//formsubmit.co/', '//formsubmit.co/ajax/'), {
       method: 'POST',
       body: new FormData(form),
       headers: { 'Accept': 'application/json' }
@@ -169,7 +169,8 @@
         });
       })
       .then(function (result) {
-        if (result.ok && result.data && result.data.success) {
+        var sent = result.data && (result.data.success === true || result.data.success === 'true');
+        if (result.ok && sent) {
           form.reset();
           showStatus('success', 'Thanks for reaching out. Your message has been sent, and a member of our team will be in touch soon.');
         } else {
