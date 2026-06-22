@@ -2319,3 +2319,23 @@ strong {
     height: 260px;
   }
 }
+
+/* Contact form status message */
+.form-status {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.form-status--success {
+  background: #e7f5ec;
+  color: #1d6b3a;
+  border: 1px solid #b6e0c4;
+}
+.form-status--error {
+  background: #fdecea;
+  color: #b3261e;
+  border: 1px solid #f5c6c0;
+}

@@ -120,3 +120,71 @@
     });
   });
 }());
+
+
+/* === 4. Contact Form (Web3Forms submission) === */
+
+(function () {
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+
+  var status    = document.getElementById('form-status');
+  var submitBtn = form.querySelector('button[type="submit"]');
+
+  function showStatus(type, message) {
+    if (!status) return;
+    status.textContent = message;
+    status.className = 'form-status form-status--' + type;
+    status.hidden = false;
+    status.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    /* The form is marked novalidate, so run native validation manually */
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    var originalLabel = submitBtn ? submitBtn.textContent : '';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+    }
+    if (status) {
+      status.hidden = true;
+      status.className = 'form-status';
+    }
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+      .then(function (response) {
+        return response.json().then(function (data) {
+          return { ok: response.ok, data: data };
+        });
+      })
+      .then(function (result) {
+        if (result.ok && result.data && result.data.success) {
+          form.reset();
+          showStatus('success', 'Thanks for reaching out. Your message has been sent, and a member of our team will be in touch soon.');
+        } else {
+          var msg = (result.data && result.data.message) ? result.data.message : 'Something went wrong. Please try again, or call us directly.';
+          showStatus('error', msg);
+        }
+      })
+      .catch(function () {
+        showStatus('error', 'Sorry, your message could not be sent. Please check your connection and try again, or call us directly.');
+      })
+      .finally(function () {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalLabel;
+        }
+      });
+  });
+}());
