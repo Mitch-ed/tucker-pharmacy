@@ -34,16 +34,12 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="nav-mobile-actions">
-          <a href="contact.html" class="btn btn-accent btn-lg">Refill a Prescription</a>
-          <!-- TODO: Replace # with your new patient registration URL -->
-          <a href="contact.html" class="btn btn-outline btn-lg">New Patient Sign-Up</a>
+          <a href="contact.html#new-patient-request" class="btn btn-outline btn-lg">New Patient Sign-Up</a>
         </div>
       </nav>
 
       <div class="header-actions">
-        <a href="contact.html" class="btn btn-accent">Refill Rx</a>
-        <!-- TODO: Replace # with your new patient registration URL -->
-        <a href="contact.html" class="btn btn-outline">New Patient</a>
+        <a href="contact.html#new-patient-request" class="btn btn-outline">New Patient</a>
       </div>
 
       <button
@@ -166,9 +162,127 @@
           <!-- End Contact Info Block -->
 
 
+          <div class="contact-forms-stack">
+
+          <!-- New Patient Request Form -->
+          <div class="contact-form-wrap" id="new-patient-request" role="region" aria-labelledby="new-patient-heading">
+            <h2 id="new-patient-heading">New Patient Request</h2>
+            <p>
+              Let us know you're interested in becoming a patient, and a member of our
+              pharmacy team will reach out to get you set up.
+            </p>
+
+            <!-- New patient request form. Submits via FormSubmit (https://formsubmit.co). -->
+            <form
+              data-ajax-form
+              action="https://formsubmit.co/office@tuckerpharmacy.com"
+              method="POST"
+              aria-label="New patient request form"
+              novalidate
+            >
+              <input type="hidden" name="_subject" value="New patient request from the Tucker Pharmacy website" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <!-- Honeypot: leave empty. Bot submissions that fill this are rejected. -->
+              <input type="text" name="_honey" style="display:none;" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="np-first-name">
+                    First Name <span aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="np-first-name"
+                    name="first_name"
+                    placeholder="Jane"
+                    required
+                    autocomplete="given-name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="np-last-name">
+                    Last Name <span aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="np-last-name"
+                    name="last_name"
+                    placeholder="Smith"
+                    required
+                    autocomplete="family-name"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="np-phone">
+                    Phone Number <span aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    class="form-input"
+                    type="tel"
+                    id="np-phone"
+                    name="phone"
+                    placeholder="615-799-0691"
+                    required
+                    autocomplete="tel"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="np-email">
+                    Email Address <span aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    class="form-input"
+                    type="email"
+                    id="np-email"
+                    name="email"
+                    placeholder="jane@example.com"
+                    required
+                    autocomplete="email"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="np-preferred-contact">
+                  Preferred Method of Contact <span aria-hidden="true">*</span>
+                </label>
+                <select class="form-select" id="np-preferred-contact" name="preferred_contact" required>
+                  <option value="" disabled selected>Select one…</option>
+                  <option value="phone">Phone Call</option>
+                  <option value="text">Text Message</option>
+                  <option value="email">Email</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                Submit Request
+              </button>
+
+              <p class="form-status" role="status" aria-live="polite" hidden></p>
+
+              <p class="form-note">
+                Please do not submit medical or prescription information through this form.
+                This form is intended only to request contact from our pharmacy. Do not
+                include prescription numbers, dates of birth, medication names, insurance
+                information, medical conditions, or other health information. A member of
+                our pharmacy team will contact you to complete the new-patient process
+                through an appropriate method.
+              </p>
+
+            </form>
+          </div>
+          <!-- End New Patient Request Form -->
+
+
           <!-- Contact Form -->
           <div class="contact-form-wrap" role="region" aria-labelledby="form-heading">
-            <h2 id="form-heading">New Patient? Need a Refill? Send Us a Message</h2>
+            <h2 id="form-heading">General Questions? Send Us a Message</h2>
             <p>
               Fill out the form below and a member of our team will follow up as quickly
               as possible. For urgent matters, please call us directly at 615-799-0691.
@@ -176,7 +290,7 @@
 
             <!-- Contact form. Submits via FormSubmit (https://formsubmit.co). -->
             <form
-              id="contact-form"
+              data-ajax-form
               action="https://formsubmit.co/office@tuckerpharmacy.com"
               method="POST"
               aria-label="Contact form"
@@ -256,9 +370,7 @@
                 <select class="form-select" id="subject" name="subject" required>
                   <option value="" disabled selected>Select a topic…</option>
                   <option value="prescription-question">Prescription Question</option>
-                  <option value="refill-request">Refill Request</option>
                   <option value="transfer">Transfer My Prescriptions</option>
-                  <option value="new-patient">New Patient Inquiry</option>
                   <option value="insurance">Insurance / Billing Question</option>
                   <option value="immunization">Immunization / Vaccine Inquiry</option>
                   <option value="other">Other</option>
@@ -282,13 +394,12 @@
                 Send Message
               </button>
 
-              <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
+              <p class="form-status" role="status" aria-live="polite" hidden></p>
 
               <p class="form-note">
                 Fields marked with <span style="color: #D0762A;" aria-hidden="true">*</span> are required.
                 Please use this form for general inquiries only. For your privacy and safety, do not
                 include prescription numbers, dates of birth, or other personal health details.
-                We respect your privacy and will never share your information.
                 For prescription emergencies or urgent medical needs, please call us directly
                 at <a href="tel:6157990691">615-799-0691</a>.
               </p>
@@ -296,6 +407,8 @@
             </form>
           </div>
           <!-- End Contact Form -->
+
+          </div>
 
         </div>
       </div>
@@ -352,9 +465,7 @@
           have a question, we're always glad to hear from you.
         </p>
         <div class="btn-group">
-          <a href="contact.html" class="btn btn-accent btn-lg">Refill a Prescription</a>
-          <!-- TODO: Replace # with your new patient registration URL -->
-          <a href="contact.html" class="btn btn-outline btn-lg">New Patient Sign-Up</a>
+          <a href="contact.html#new-patient-request" class="btn btn-outline btn-lg">New Patient Sign-Up</a>
         </div>
       </div>
     </section>

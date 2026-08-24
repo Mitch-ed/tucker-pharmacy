@@ -125,67 +125,69 @@
 /* === 4. Contact Form (Web3Forms submission) === */
 
 (function () {
-  var form = document.getElementById('contact-form');
-  if (!form) return;
+  var forms = document.querySelectorAll('form[data-ajax-form]');
+  if (!forms.length) return;
 
-  var status    = document.getElementById('form-status');
-  var submitBtn = form.querySelector('button[type="submit"]');
+  forms.forEach(function (form) {
+    var status    = form.querySelector('.form-status');
+    var submitBtn = form.querySelector('button[type="submit"]');
 
-  function showStatus(type, message) {
-    if (!status) return;
-    status.textContent = message;
-    status.className = 'form-status form-status--' + type;
-    status.hidden = false;
-    status.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    /* The form is marked novalidate, so run native validation manually */
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
+    function showStatus(type, message) {
+      if (!status) return;
+      status.textContent = message;
+      status.className = 'form-status form-status--' + type;
+      status.hidden = false;
+      status.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
-    var originalLabel = submitBtn ? submitBtn.textContent : '';
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-    }
-    if (status) {
-      status.hidden = true;
-      status.className = 'form-status';
-    }
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
 
-    fetch(form.action.replace('//formsubmit.co/', '//formsubmit.co/ajax/'), {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    })
-      .then(function (response) {
-        return response.json().then(function (data) {
-          return { ok: response.ok, data: data };
+      /* The form is marked novalidate, so run native validation manually */
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      var originalLabel = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+      }
+      if (status) {
+        status.hidden = true;
+        status.className = 'form-status';
+      }
+
+      fetch(form.action.replace('//formsubmit.co/', '//formsubmit.co/ajax/'), {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(function (response) {
+          return response.json().then(function (data) {
+            return { ok: response.ok, data: data };
+          });
+        })
+        .then(function (result) {
+          var sent = result.data && (result.data.success === true || result.data.success === 'true');
+          if (result.ok && sent) {
+            form.reset();
+            showStatus('success', 'Thanks for reaching out. Your message has been sent, and a member of our team will be in touch soon.');
+          } else {
+            var msg = (result.data && result.data.message) ? result.data.message : 'Something went wrong. Please try again, or call us directly.';
+            showStatus('error', msg);
+          }
+        })
+        .catch(function () {
+          showStatus('error', 'Sorry, your message could not be sent. Please check your connection and try again, or call us directly.');
+        })
+        .finally(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalLabel;
+          }
         });
-      })
-      .then(function (result) {
-        var sent = result.data && (result.data.success === true || result.data.success === 'true');
-        if (result.ok && sent) {
-          form.reset();
-          showStatus('success', 'Thanks for reaching out. Your message has been sent, and a member of our team will be in touch soon.');
-        } else {
-          var msg = (result.data && result.data.message) ? result.data.message : 'Something went wrong. Please try again, or call us directly.';
-          showStatus('error', msg);
-        }
-      })
-      .catch(function () {
-        showStatus('error', 'Sorry, your message could not be sent. Please check your connection and try again, or call us directly.');
-      })
-      .finally(function () {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalLabel;
-        }
-      });
+    });
   });
 }());

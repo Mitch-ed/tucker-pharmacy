@@ -695,7 +695,7 @@ strong {
 
 .action-cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-5);
 }
 
@@ -1615,6 +1615,12 @@ strong {
   align-items: start;
 }
 
+.contact-forms-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+}
+
 .contact-info-block {
   background-color: var(--clr-white);
   border: 1px solid var(--clr-border);
@@ -2180,7 +2186,7 @@ strong {
 
   /* Grid collapsing */
   .action-cards {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .welcome-grid,
