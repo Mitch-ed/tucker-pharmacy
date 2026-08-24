@@ -385,6 +385,20 @@ strong {
   color: var(--clr-primary-dark);
 }
 
+/* Green - used for the TennCare Diaper Benefit callout */
+.btn-green {
+  background-color: var(--clr-green);
+  border-color: var(--clr-green);
+  color: var(--clr-white);
+}
+
+.btn-green:hover {
+  background-color: #2E6044;
+  border-color: #2E6044;
+  color: var(--clr-white);
+  box-shadow: var(--sh-sm);
+}
+
 /* Ghost */
 .btn-ghost {
   background-color: transparent;
@@ -2338,4 +2352,178 @@ strong {
   background: #fdecea;
   color: #b3261e;
   border: 1px solid #f5c6c0;
+}
+
+
+/* ─── 29. Announcement Bar ──────────────────────────────────── */
+
+.announcement-bar {
+  background-color: var(--clr-green);
+}
+
+.announcement-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--sp-2) var(--sp-3);
+  padding: var(--sp-3) var(--sp-6);
+  color: var(--clr-white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color var(--tr);
+}
+
+.announcement-bar-inner:hover {
+  background-color: var(--clr-primary-dark);
+  color: var(--clr-white);
+}
+
+.announcement-bar-inner i {
+  font-size: 0.95rem;
+}
+
+
+/* ─── 30. TennCare Diaper Benefit ───────────────────────────── */
+
+.benefit-highlight {
+  background-color: var(--clr-green-light);
+  border-top: 3px solid var(--clr-green);
+  border-bottom: 3px solid var(--clr-green);
+}
+
+.section-label--green {
+  color: var(--clr-green);
+}
+
+.benefit-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--sp-5);
+  margin-top: var(--sp-8);
+}
+
+.benefit-card {
+  background-color: var(--clr-white);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+  transition: border-color var(--tr), box-shadow var(--tr);
+}
+
+.benefit-card:hover {
+  border-color: var(--clr-green);
+  box-shadow: var(--sh-sm);
+}
+
+.benefit-card-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: var(--sp-4);
+  background-color: var(--clr-green-light);
+  color: var(--clr-green);
+  border-radius: var(--r);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+}
+
+.benefit-card h4 {
+  margin-bottom: var(--sp-2);
+}
+
+.benefit-card p {
+  font-size: 0.9rem;
+  margin: 0;
+  max-width: none;
+}
+
+.benefit-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  margin-top: var(--sp-8);
+  padding-top: var(--sp-6);
+  border-top: 1px solid rgba(58, 120, 85, 0.2);
+}
+
+.benefit-note {
+  font-size: 0.9375rem;
+  margin: 0;
+  max-width: none;
+}
+
+.benefit-note a {
+  font-weight: 600;
+}
+
+
+/* ─── 31. TennCare Diaper Benefit Callout (Front Page) ──────── */
+
+.benefit-callout {
+  background-color: var(--clr-green-light);
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+  padding: var(--sp-16) 0;
+}
+
+.benefit-callout-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-8);
+}
+
+.benefit-callout-icon {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  background-color: var(--clr-white);
+  color: var(--clr-green);
+  border-radius: var(--r-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: var(--sh-sm);
+}
+
+.benefit-callout-body h2 {
+  margin-bottom: var(--sp-4);
+}
+
+.benefit-callout-body p {
+  max-width: 62ch;
+}
+
+.benefit-callout-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin: var(--sp-6) 0 var(--sp-4);
+}
+
+.benefit-callout-note {
+  font-size: 0.875rem;
+  color: var(--clr-text-muted);
+  margin: 0;
+}
+
+.benefit-callout-note a {
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .benefit-callout-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .benefit-callout {
+    padding: var(--sp-12) 0;
+  }
 }
